@@ -1,19 +1,13 @@
 import express from "express";
-import fs from "fs";
 import path from "path";
 import React from "react";
 import ReactDOMServer from "react-dom/server";
 // @ts-ignore The .tsx ending seems to be needed, not 100% sure why
 import { routes } from "./Routes";
 
-// import { generateHash } from 'random-hash';
-import https from 'https'
-import querystring from 'querystring'
-import { StaticRouter, StaticRouterProvider, createStaticHandler, createStaticRouter } from "react-router-dom/server";
+import { StaticRouterProvider, createStaticHandler, createStaticRouter } from "react-router-dom/server";
 
 const PORT = 3000;
-const AppId = 'fb95d951fc1efdb40171214c08f9031f8160a3240c477c6e6039d1df09220fa4' // '876dd7572cdea479a739'; // 
-const AppSecret = 'e3efd40d00666c13cabe11fcce200ffe9dd4bebc6799cd9ede43cc532ac4df5f' // '636ae85367531bb274e1821463ff484170f9c62f'; // 
 
 const app = express();
 
@@ -116,7 +110,6 @@ const router = express.Router()
 //     reqPost.end();
 //   });
 // });
-router.use(express.static(path.resolve(__dirname, "../build")));
 export function createFetchRequest(req: express.Request): Request {
   let origin = `${req.protocol}://${req.get("host")}`;
   // Note: This had to take originalUrl into account for presumably vite's proxying
