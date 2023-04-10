@@ -48,7 +48,7 @@
     "dev:frontend": "react-scripts start",
     "start:ssr": "cross-env NODE_OPTIONS=\"--max_old_space_size=2048\" node server/index.ts",
     "build": "cross-env NODE_OPTIONS=\"--max_old_space_size=2048\" react-scripts build",
-    "build:ssr": "cross-env NODE_OPTIONS=\"--max_old_space_size=2048\" react-scripts build",
+    "build:ssr": "cross-env NODE_OPTIONS=\"--max_old_space_size=2048\" tsc -p tsconfig.server.json",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
