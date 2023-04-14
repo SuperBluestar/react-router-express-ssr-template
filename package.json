@@ -28,7 +28,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "npm run start",
+    "start": "npm run start:ssr",
     "dev:frontend": "react-scripts start",
     "start:ssr": "cross-env NODE_OPTIONS=\"--max_old_space_size=2048\" node server/index.js",
     "build": "cross-env NODE_OPTIONS=\"--max_old_space_size=2048\" react-scripts build",
